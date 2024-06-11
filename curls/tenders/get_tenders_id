@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# valid
+curl "http://localhost:8080/tenders/1337-1" | jq .
+
+# not found
+# curl "http://localhost:8080/tenders/LP-20320" -i

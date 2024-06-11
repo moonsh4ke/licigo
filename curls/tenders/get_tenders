@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# curl -i "http://localhost:8080/v1/tenders"
+curl "http://localhost:8080/v1/tenders" | jq .

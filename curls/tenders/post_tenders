@@ -1,0 +1,35 @@
+#!/bin/bash
+
+BODY='{
+    "code": "1337-1",
+    "type": "LP",
+    "stateCode": 5,
+    "endDate": "2024-01-01",
+    "name": "Licitacion de prueba 1",
+    "description": "Descripcion de prueba",
+    "organism": "Mineduc",
+    "purchasingRegion": "Rancagua",
+    "publicationDate": "2024-01-02",
+    "categories": ["category1", "category2"],
+    "filter": {
+        "date": "2024-01-02",
+        "matches": [
+            {
+                "filterName": "mobiliario urbano",
+                "keyword": "juegos plaza",
+                "on": "description"
+            },
+            {
+                "filterName": "mobiliario urbano",
+                "keyword": "maquinas de ejercicio",
+                "on": "item description"
+            }
+        ]
+    }
+}'
+
+curl    -X POST \
+        -H "Content-Type: application/json" \
+        -d "$BODY" \
+        -i \
+        "http://localhost:8080/tenders" \
